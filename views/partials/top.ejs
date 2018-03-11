@@ -1,0 +1,46 @@
+<div id="header-wrapper" class="wrapper">
+  <div id="header">
+
+    <!-- Logo -->
+    <!-- @TODO Fix header and main nav color and font so it can accomodate any image as background -->
+    <div id="logo">
+      <h1><a href="index.html"><%= siteTitle %></a></h1>
+      <p>
+        <%= siteTagline %>
+      </p>
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="#">Our Events</a>
+          <ul>
+            <li>
+              <a href="#">Summer Research Institute ></a>
+              <ul>
+                <% for (var i = 0; i < csstEvents.length; i++) { %>
+                  <% var item = csstEvents[i]; %>
+                    <li>
+                      <a href="http://community.sociotech.net/t/<%= item.slug %>">
+                        <%= item.title %>
+                      </a>
+                    </li>
+                    <% } %>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.zotero.org/groups/271377/">Research library</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="http://community.sociotech.net/c/announcements/jobs">Jobs Listings</a>
+        </li>
+      </ul>
+
+    </nav>
+
+
+  </div>
+</div>

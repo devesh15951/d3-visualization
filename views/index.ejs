@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <% include partials/head.ejs %>
+</head>
+
+<body class="left-sidebar">
+  <div id="page-wrapper">
+
+    <!-- Banner and Menu -->
+    <% include partials/top.ejs %>
+
+      <!-- Main -->
+      <div class="wrapper style2">
+        <div class="title">
+          <%= pageTitle %>
+        </div>
+        <div id="main" class="container">
+          <div class="row 150%">
+            <div class="4u 12u(mobile)">
+
+              <!-- Sidebar -->
+              <div id="sidebar">
+                <section class="box">
+
+                  <!-- <% include partials/highlights.ejs %> -->
+                  <!-- This section & partial does exist but not always necessary -->
+
+                </section>
+                <section class="box">
+                  <% include partials/discourse-links.ejs %>
+                </section>
+              </div>
+
+            </div>
+            <div class="8u 12u(mobile) important(mobile)">
+
+              <!-- Content -->
+              <div id="content">
+                <article class="box post">
+                  <header class="style1">
+                    <h2>Improving human lives by understanding sociotechnical systems</h2>
+                  </header>
+                  <%# <a href="#" class="image featured">
+												<img src="images/pic01.jpg" alt="" />
+											</a>%>
+
+                    <p>This online community and the Consortium for the Science of Sociotechnical Systems (CSST) serves as a trans-discipline community, connecting like-minded scholars from many different intellectual communities. CSST brings together researchers
+                      from a wide range of disciplines to develop a common language and scholarly repertoire as we work to understand diverse sociotechnical issues. Research on human activity such as collaboration, creativity, learning and economic production
+                      in domains like healthcare, education, science, leisure, and computing requires researchers to understand both social and technical aspects of human organization. That’s what we do.</p>
+                    <h2>Acknowledge CSST in your work</h2>
+                    <p>Are you a researcher who has benefitted from participation in our workshops and events? Please consider acknowledging the CSST RCN in your publications. Here is some boilerplate text for you to use and extend:</p>
+                    <p><em>We thank the Consortium for the Science of Sociotechnical Systems, an NSF-supported research coordination network (Grant #1144934).</em></p>
+                </article>
+
+                <!-- Content-section Highlights -->
+                <!-- <% include partials/content-highlights-narrow.ejs %> -->
+                <!-- This section & partial does exist but not always necessary -->
+
+                <hr />
+                <h1>Latest Announcements</h1>
+                <ul class="style2">
+                  <% for (var i = 0; i < 5; i++) { %>
+                    <% var item = discourseLatest[i]; %>
+                      <% if (item.category_id = 4) { %>
+                        <li>
+                          <h4><%=item.title %></h4>
+                          <%= item.excerpt %>
+                            <BR /><a href="http://community.sociotech.net/t/<%= item.slug %>">Posted: <%= item.created_at %>.</a>
+                        </li>
+                        <% } %>
+                          <% } %>
+                </ul>
+                <a href="http://community.sociotech.net" class="button style1">Read More</a>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer-section Highlights -->
+      <!-- <% include partials/footer-highlights.ejs %> -->
+      <!-- This section & partial does exist but not always necessary -->
+
+      <!-- Footer -->
+      <% include partials/footer.ejs %>
+
+  </div>
+
+  <!-- Scripts -->
+  <% include partials/scripts.ejs %>
+
+</body>
+
+</html>
